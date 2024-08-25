@@ -6,6 +6,9 @@ RUN mkdir /build
 COPY . /build
 WORKDIR /build
 
+# Make mvnw executable
+RUN chmod +x ./mvnw
+
 # Run maven build command
 RUN ./mvnw -Pnative -DskipTests native:compile
 
